@@ -17,13 +17,8 @@ class ProductsExport implements FromCollection, WithHeadings, ShouldAutoSize
         foreach ($products as $row) {
             $product[] = array(
                 '0' => $row->id,
-                '1' => $row->title,
-                '2' => number_format($row->views),
-                '3' => $row->dates,
-                '4' => number_format($row->revenues),
-                '5' => $row->rates,
-                '6' => $row->revenueshare,
-                '7' => $row->doitac->name,
+                '1' => $row->name,
+                '2' => number_format($row->price),
             );
         }
         return (collect($product));
@@ -32,13 +27,8 @@ class ProductsExport implements FromCollection, WithHeadings, ShouldAutoSize
     {
         return [
             'id',
-            'Tiêu đề',
-            'Lượt xem',
-            'Tháng',
-            'Doanh thu',
-            'Tỉ lệ',
-            'Doanh thu đã chia',
-            'Đối tác',
+            'Tên sản phẩm',
+            'Giá tiền'
         ];
     }
 }

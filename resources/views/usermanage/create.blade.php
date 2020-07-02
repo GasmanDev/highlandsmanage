@@ -35,7 +35,7 @@
                             <div class="col-md-9">
                                 <select class="form-control" name="sex">
                                     <option style = 'background-color:#212529;' value="Nam">Nam</option>
-                                    <option style = 'background-color:#212529;' value="Nam">Nữ</option>
+                                    <option style = 'background-color:#212529;' value="Nữ">Nữ</option>
                                 </select>
                             </div>
                         </div>

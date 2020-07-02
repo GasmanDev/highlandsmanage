@@ -30,6 +30,42 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="form-group{{ $errors->has('idcard') ? ' has-error' : '' }}">
+                            <label for="idcard" class="col-md-3 control-label">CMND</label>
+                            <div class="col-md-9">
+                                <input id="idcard" type="text" class="form-control" placeholder="Vui lòng điền số CMND" idcard="idcard" value="{{ $user->idcard }}" required autofocus>
+                                @if ($errors->has('idcard'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('idcard') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
+                            <label for="address" class="col-md-3 control-label">Địa chỉ</label>
+                            <div class="col-md-9">
+                                <input id="address" type="text" class="form-control" placeholder="Vui lòng điền địa chỉ" address="address" value="{{ $user->address }}" required autofocus>
+                                @if ($errors->has('address'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('address') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group{{ $errors->has('sex') ? ' has-error' : '' }}">
+                            <label for="sex" class="col-md-3 control-label">Giới tính</label>
+                            <div class="col-md-9">
+                                <select class="form-control" name="sex">
+                                    @if ($user->sex == 'Nam')
+                                    <option style = 'background-color:#212529;' value="Nam">Nam</option>
+                                    <option style = 'background-color:#212529;' value="Nữ">Nữ</option>
+                                    @else 
+                                    <option style = 'background-color:#212529;' value="Nữ">Nữ</option>
+                                    <option style = 'background-color:#212529;' value="Nam">Nam</option>
+                                    @endif
+                                </select>
+                            </div>
+                        </div>
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-3 control-label">Mật khẩu</label>
                             <div class="col-md-9">
