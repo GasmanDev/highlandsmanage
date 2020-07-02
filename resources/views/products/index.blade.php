@@ -21,7 +21,7 @@
                     <table class="table tablesorter " id="">
                         <thead class=" text-primary">
                             <tr><th scope="col">Tên sản phẩm</th>
-                            <th scope="col">Giá tiền</th>
+                            <th scope="col">Giá tiền (VNĐ)</th>
                             @can('product.create')
                             <th scope="col">Trạng thái</th>
                             <th scope="col"></th>
@@ -32,7 +32,7 @@
                             @foreach($products as $product)
                             <tr>
                                 <td><a style="color: #eceff1;font-weight: bold;" href="#" target="_blank">{{$product->name}}</a></td>
-                                <td>{{$product->price}}</td>
+                                <td>{{number_format($product->price, 0)}}</td>
                                 @can('product.create')
                                 @if ($product->published == true)
                                 <td>Hiện</td>
@@ -60,7 +60,7 @@
                             @if ($product->published == true)
                             <tr>
                                 <td><a style="color: #eceff1;font-weight: bold;" href="#" target="_blank">{{$product->name}}</a></td>
-                                <td>{{$product->price}}</td>
+                                <td>{{number_format($product->price, 0)}}</td>
                             </tr>
                             @endif
                             @endforeach
